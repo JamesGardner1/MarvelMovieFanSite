@@ -1,0 +1,19 @@
+{
+  "name": "marvel-movie-site",
+  "description": "Marvel Movie Site",
+  "main": "server.js",
+  "author": "James Gardner",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "pg": "^7.10.0",
+    "sequelize": "^5.8.2",
+    "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "sqlite3": "^4.0.6"
+  }
+}
