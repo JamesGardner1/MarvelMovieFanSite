@@ -21,7 +21,7 @@ const movies = [
     },
     {
         "name":"Iron Man 2",
-        "bio":"With the world now aware that he is Iron Man, billionaire inventor Tony Stark faces pressure from all sides to share his technology with the military. He is reluctant to divulge the secrets of his armored suit, fearing the information will fall into the wrong hands. With Pepper Potts (Gwyneth Paltrow) and "Rhodey" Rhodes by his side, Tony must forge new alliances and confront a powerful new enemy.",
+        "bio":"With the world now aware that he is Iron Man, billionaire inventor Tony Stark faces pressure from all sides to share his technology with the military. He is reluctant to divulge the secrets of his armored suit, fearing the information will fall into the wrong hands. With Pepper Potts (Gwyneth Paltrow) and Rhodey Rhodes by his side, Tony must forge new alliances and confront a powerful new enemy.",
         "picture":"",
         "order":4,
     },
@@ -31,43 +31,25 @@ const movies = [
         "picture":"",
         "order":5,
     },
-    {
-        "name":"",
-        "bio":"It is 1941 and the world is in the throes of war. Steve Rogers (Chris Evans) wants to do his part and join America's armed forces, but the military rejects him because of his small stature. Finally, Steve gets his chance when he is accepted into an experimental program that turns him into a supersoldier called Captain America. Joining forces with Bucky Barnes (Sebastian Stan) and Peggy Carter (Hayley Atwell), Captain America leads the fight against the Nazi-backed HYDRA organization.",
-        "picture":"",
-        "order":1,
-    },
-    {
-        "name":"Captain America: The First Avenger",
-        "bio":"It is 1941 and the world is in the throes of war. Steve Rogers (Chris Evans) wants to do his part and join America's armed forces, but the military rejects him because of his small stature. Finally, Steve gets his chance when he is accepted into an experimental program that turns him into a supersoldier called Captain America. Joining forces with Bucky Barnes (Sebastian Stan) and Peggy Carter (Hayley Atwell), Captain America leads the fight against the Nazi-backed HYDRA organization.",
-        "picture":"",
-        "order":1,
-    },
-
 
 ]
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
 
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
+      var moviesWatched = movies.map(function(s) {
+        s.watched = false;
+        s.createdAt = new Date(),
+            s.updatedAt = new Date()
+        return s
+      })
+
+    return queryInterface.bulkInsert('Movies', moviesWatched, {})
+
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
 
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
+      return queryInterface.bulkDelete('Movies', null, {});
   }
 };
