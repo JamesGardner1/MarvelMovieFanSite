@@ -1,14 +1,14 @@
 var express = require('express')
 var path = require('path')
 var bodyParser = require('body-parser')
-var states_api = require('./routes/movies.js')
+var movies_api = require('./routes/movies.js')
 
 var app = express()
 
 app.use(express.static(path.join(__dirname, 'client', 'dist')))
 app.use(bodyParser.json())
 
-app.use('/api', states_api)
+app.use('/api', movies_api)
 
 // Error handlers - for not found, and app errors
 app.use(function(req, res, next){
