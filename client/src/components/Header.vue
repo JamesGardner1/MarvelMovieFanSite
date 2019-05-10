@@ -20,6 +20,7 @@
         background-image: url('../assets/avengersready.jpg');
         background-position: center;
         background-size: cover;
+        /* Grays out header */
         background-blend-mode: luminosity;
         ;
 
