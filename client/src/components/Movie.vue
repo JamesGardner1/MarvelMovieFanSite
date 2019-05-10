@@ -2,8 +2,8 @@
     <div class="movie-summary p-2 rounded">
 
         <span class="m-2">{{ movie.name }}</span>
-        <p>{{ movie.bio }}</p>
-        <p> <input id="seen" class="m-2" type="checkbox"></p>
+        <p><span class ="m-3">{{ movie.bio }}</span>
+            <input id="seen" class="r-2" type="checkbox"></p>
     </div>
 </template>
 
@@ -24,9 +24,16 @@
 <style scoped>
     .movie-summary {
         height: 8cm;
-        width: 10cm;
+        width: 20cm;
         border: 1px #505011 solid;
         background-color: black;
+    }
+    .m-2 {
+        font-weight: bold;
+        color: darkgoldenrod;
+    }
+    .m-3 {
+        color: burlywood;
     }
 
 </style>
