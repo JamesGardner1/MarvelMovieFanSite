@@ -17,7 +17,7 @@
 
 <style scoped>
     .jumbotron {
-        background-image: url('../assets/avengersready.jpg');
+        background-image: url('../../../public/images/avengersready.jpg');
         background-position: center;
         background-size: cover;
         /* Grays out header */

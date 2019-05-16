@@ -6,6 +6,8 @@ var movies_api = require('./routes/movies.js')
 var app = express()
 
 app.use(express.static(path.join(__dirname, 'client', 'dist')))
+app.use(express.static(path.join(__dirname, 'public', 'images')))
+
 app.use(bodyParser.json())
 
 app.use('/api', movies_api)
