@@ -144,7 +144,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
 
     var moviesWatched = movies.map(function(s) {
-      s.seen = false;
+      s.watched = false;
       s.createdAt = new Date(),
           s.updatedAt = new Date()
       return s

@@ -1,10 +1,16 @@
 <template>
     <div id="movie-list">
 
-        <div class ="p-2" v-for="movie in movies" v-bind:key="movie.name">
-            <Movie v-bind:movie="movie"></Movie>
+
+        <div class ="d-flex flex-wrap justify-content-around">
+            <div class="p-2" v-for="movie in movies" v-bind:key="movie.name">
+            <Movie
+                    v-bind:movie="movie"
+                    v-on:hasWatched="updateWatched"
+            ></Movie>
         </div>
        </div>
+    </div>
 </template>
 
 <script>
@@ -13,7 +19,7 @@
     export default {
         name: "MovieList",
         components: {
-            Movie
+            Movie,
         },
         data() {
             return {
@@ -29,7 +35,12 @@
                     this.movies = data
                 })
             },
-        }
+            updateWatched(movieName, movieWatched) {
+                this.$movieService.setWatched(movieName, movieWatched).then(data => {
+                    this.getAll()
+                })
+            }
+        },
 
     }
 </script>

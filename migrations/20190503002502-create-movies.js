@@ -11,7 +11,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      seen: {
+      watched: {
         type: Sequelize.BOOLEAN
       },
       bio: {
